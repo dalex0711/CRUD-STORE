@@ -1,0 +1,34 @@
+{
+  "productos": [
+    {
+      "id": 1,
+      "name": "White Shirt",
+      "feature": "100% cotton, short sleeve",
+      "price": 39.99
+    },
+    {
+      "id": 2,
+      "name": "Blue Jeans",
+      "feature": "Slim fit, stretch fabric",
+      "price": 59.49
+    },
+    {
+      "id": 3,
+      "name": "Urban Sneakers",
+      "feature": "Modern design, non-slip sole",
+      "price": 89.95
+    },
+    {
+      "id": 4,
+      "name": "Urban Sneakers",
+      "feature": "Modern design, non-slip sole",
+      "price": 89.95
+    },
+    {
+      "id": 5,
+      "name": "Urban Sneakers",
+      "feature": "Modern design, non-slip sole",
+      "price": 89.95
+    }
+  ]
+}

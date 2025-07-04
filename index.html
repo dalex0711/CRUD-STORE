@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        WELCOME
+    </header>
+    <section>
+        <div id="productos-container"> 
+        <!--Aquí rederizademos los productos-->
+        </div>
+        <template id="template-producto">
+            <div class="card" id="cardDiv">
+                <div class="card-img"></div>
+                <div class="card-info">
+                    <p class="text-name">CAMISA </p>
+                    <p class="text-id">ID: 1</p>
+                    <p class="text-feature">sadjadjk</p>
+                </div>
+                <div class="card-footer">
+                    <span class="price">$499.49</span>
+                    
+                </div>
+            </div>
+        </template>
+    </section>
+    <section class="section-button">
+        <div class="button-container">
+            <button class="button"id="btn-create" >CREAR</button>
+            <button class="button" id="btn-update" >ACTUALIZAR</button>
+            <button class="button" id="btn-delete" >ELIMINAR</button>
+        </div>
+    </section>
+    <form id="form-crud" class="hidden">
+        <input type="text" name="id" id="input-id" placeholder="ID">
+        <input type="text" name="name" id="input-name" placeholder="Name">
+        <input type="text" name="feature" id="input-feature" placeholder="Feature">
+        <input type="number" name="price" id="input-price" placeholder="Price">
+        <input type="submit" value="Enviar">
+    </form>
+
+    
+    <script src="./script.js"></script>
+</body>
+</html>
