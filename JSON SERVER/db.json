@@ -29,6 +29,26 @@
       "name": "Urban Sneakers",
       "feature": "Modern design, non-slip sole",
       "price": 89.95
+    },
+    {
+      "id": 6,
+      "name": "Blue Jeans",
+      "feature": "Slim fit, stretch fabric",
+      "price": 59.49
     }
+    ,
+    {
+      "id": 7,
+      "name": "Blue Jeans",
+      "feature": "Slim fit, stretch fabric",
+      "price": 59.49
+    },
+    {
+      "id": 7,
+      "name": "Blue Jeans",
+      "feature": "Slim fit, stretch fabric",
+      "price": 59.49
+    }
+    
   ]
 }

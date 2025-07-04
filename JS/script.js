@@ -1,6 +1,6 @@
 apiUrl = "http://localhost:3000/productos";
 
-/*-----OBTENER*/
+/*-----------------------------------------------------------------------------------------------OBTENER*/
 async function getData() { //OBTENIENDO RECURSO
     try {
         let response =  await fetch(apiUrl);
@@ -19,7 +19,7 @@ async function getData() { //OBTENIENDO RECURSO
         console.log(`GET: Error ${error.status}: ${message}`)
     }
 }
-/*-----CREAR*/ 
+/*-----------------------------------------------------------------------------------------------CREAR*/ 
 async function postData(data) { //CREANDO UN NUEVO RECURSO
     try {
         const response = await fetch(apiUrl,{
@@ -45,7 +45,7 @@ async function postData(data) { //CREANDO UN NUEVO RECURSO
 }
 
  
-/*-----ACTUALIZAR*/
+/*-------------------------------------------------------------------------------------------ACTUALIZAR*/
 async function updateData(id, data) { //ACTUALIZANDO UN RECURSO EXISTENTE
     console.log(`Actualizando producto con ID: ${id}`);
     console.log("Datos a actualizar:", data);
@@ -74,7 +74,7 @@ async function updateData(id, data) { //ACTUALIZANDO UN RECURSO EXISTENTE
     }
 }
 
-/*-----ELIMIINAR*/
+/*-------------------------------------------------------------------------------------------------------ELIMINAR*/
 
 async function deleteData(id) { //ELIMINANDO UN RECURSO
     try {
@@ -97,7 +97,7 @@ async function deleteData(id) { //ELIMINANDO UN RECURSO
 }
 
 /**
- *-------------------------------------------------------------- AL DOM
+ *---------------------------------------------------------------------------------------------------------------AL DOM
  */
 
 function mostrarProductos(productos){
@@ -123,4 +123,97 @@ function mostrarProductos(productos){
 
 window.addEventListener('DOMContentLoaded',() => getData());
 
+
+///-----------------------------------------------------------------------------------------------------CONST DE FORM
+
+const form = document.getElementById('form-crud'),
+      productID = document.getElementById('input-id'),
+      productName = document.getElementById('input-name'),
+      productFeature = document.getElementById('input-feature'),
+      productoPrice = document.getElementById('input-price');
+
+let containerForm = document.getElementById('containerForm'),
+    titleForm= document.getElementById('title-form'),
+    messageForm = document.getElementById('message');
+
+//BUTTON DE FORM 
+const createBtn = document.getElementById('btn-create'),
+      updateBtn = document.getElementById('btn-update'),
+      deleteBtn = document.getElementById('btn-delete'),
+      formulario = document.getElementById('form');
+
+
+
+//----------------------------------------------------------------------------------------------------------HABILITANDO INPUTS DEPENDIENDO DEL BUTTON
+
+
+pressedButton = null;
+
+//-------------------------------------------- PARA CREAR: name,feature,price.
+createBtn.addEventListener('click',() => {
+
+    pressedButton = 'create';
+    titleForm.innerHTML = "Create"
+    messageForm.innerHTML = "You just need to enter the [name, price, and features]. The ID is automatic."
+    containerForm.style.display = "flex";
+
+    productID.disabled = true;
+    productName.disabled = false;
+    productFeature.disabled = false;
+    productoPrice.disabled = false; 
+
+
+});
+
+console.log(containerForm)
+
+//------------------------------------------- PARA UPDATE: id,name,feature,price.
+updateBtn.addEventListener('click',() => {
+
+    pressedButton = 'update';
+    titleForm.innerHTML = "Update"
+    messageForm.innerHTML = "You must enter all fields"
+    containerForm.style.display = "flex";
+
+    productID.disabled = false;
+    productName.disabled = false;
+    productFeature.disabled = false;
+    productoPrice.disabled = false; 
+
+});
+
+//--------------------------------------------- PARA DELETE: id o name 
+deleteBtn.addEventListener('click',() => {
+
+    pressedButton = 'delete';
+    titleForm.innerHTML = "Delete"
+    messageForm.innerHTML = "Enter the id to delete"
+    containerForm.style.display = "flex";
+
+    productID.disabled = false;
+    productName.disabled = true;
+    productFeature.disabled = true;
+    productoPrice.disabled = true; 
+
+});
+
+
+
+
+//---------------------------------------------------------Fuction para validar los valores
+
+
+
+formulario.addEventListener("submit", onFormSubmit);
+
+//--------Aquí obtenemos volares
+function onFormSubmit(e){
+    e.preventDefault();
+	const data = new FormData(e.target);
+    const id = data.get("id");
+	const name = data.get("name");
+    const price = data.get("price");
+    const feature = data.get("feature")
+	console.log(`Nombre: ${name}, Correo Electrónico: ${price} ${feature} ${id}` );
+}
 

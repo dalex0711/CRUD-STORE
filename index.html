@@ -10,6 +10,7 @@
     <header>
         WELCOME
     </header>
+
     <section>
         <div id="productos-container"> 
         <!--Aquí rederizademos los productos-->
@@ -29,22 +30,49 @@
             </div>
         </template>
     </section>
+
     <section class="section-button">
         <div class="button-container">
             <button class="button"id="btn-create" >CREAR</button>
             <button class="button" id="btn-update" >ACTUALIZAR</button>
             <button class="button" id="btn-delete" >ELIMINAR</button>
         </div>
+
+        <div class="hidden" id="containerForm">
+            <div class="form-wrapper">
+                <form class="form" id="form">
+                    <p class="title" id="title-form">Register</p>
+                    <p class="message" id="message">Signup now and get full access to our app.</p>
+
+                    <label>
+                        <input class="input" type="text" name="id" id="input-id">
+                        <span>ID</span>
+                    </label>
+
+                    <label>
+                        <input class="input" type="text" name="name" id="input-name">
+                        <span>Product name</span>
+                    </label>
+
+                    <label>
+                        <input class = "input" type="number" name="price" id="input-price">
+                        <span>Price</span>
+                    </label>
+
+                    <label>
+                        <input type="text" name="feature" id="feature" class="input">
+                        <span>Feature</span>
+                    </label>
+
+                    <input class="submit" type="submit" value="Enviar">
+                </form>
+            </div>
+        </div>
     </section>
-    <form id="form-crud" class="hidden">
-        <input type="text" name="id" id="input-id" placeholder="ID">
-        <input type="text" name="name" id="input-name" placeholder="Name">
-        <input type="text" name="feature" id="input-feature" placeholder="Feature">
-        <input type="number" name="price" id="input-price" placeholder="Price">
-        <input type="submit" value="Enviar">
-    </form>
+
 
     
-    <script src="./script.js"></script>
+    <script src="./JS/script.js"></script>
 </body>
 </html>
+
