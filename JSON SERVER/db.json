@@ -3,50 +3,32 @@
     {
       "id": "1",
       "name": "Blue Jeans",
-      "feature": "Slim fit, stretch fabric",
+      "feature": "Slim fit · Stretch fabric",
       "price": 59.49
     },
     {
       "id": "2",
       "name": "Urban Sneakers",
-      "feature": "Modern design, non-slip sole",
+      "feature": "Modern design · Non-slip sole",
       "price": 89.95
     },
     {
       "id": "3",
       "name": "Graphic T-Shirt",
-      "feature": "100% cotton, printed front",
+      "feature": "100% Cotton · Printed front",
       "price": 24.99
     },
     {
-      "id": "5",
+      "id": "4",
       "name": "Canvas Backpack",
-      "feature": "Durable material, multiple pockets",
-      "price": 44.5
+      "feature": "Durable material · Multiple pockets",
+      "price": 44.50
     },
     {
-      "id": "2111",
-      "name": "pantalon",
-      "price": 1221,
-      "feature": "asd"
-    },
-    {
-      "id": "a73e",
-      "name": "pantalon",
-      "price": 1,
-      "feature": "asd"
-    },
-    {
-      "id": "d2cf",
-      "name": "pantalon",
-      "price": 1,
-      "feature": "asd"
-    },
-    {
-      "id": "d58e",
-      "name": "qwe",
-      "price": 2,
-      "feature": "123"
+      "id": "5",
+      "name": "Leather Wallet",
+      "feature": "Genuine leather · RFID protected",
+      "price": 39.99
     }
   ]
 }

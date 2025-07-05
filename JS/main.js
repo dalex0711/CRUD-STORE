@@ -88,8 +88,6 @@ deleteBtn.addEventListener('click', () => {
 
 
 form.addEventListener("submit", onFormSubmit);
-
-
   async function onFormSubmit(e) {
       
     e.preventDefault();
@@ -144,17 +142,18 @@ form.addEventListener("submit", onFormSubmit);
             * VALIDATIONS FOR DELETE A PRODUCT: THAT IT IS NOT EMPTY.
             * THAT THE ID EXISTS: WE DID A GET. AS THERE ARE FEW PRODUCTS, THERE IS NO PROBLEM
           */
-         
+
           } else {
-            if (!name || !price || !feature) {
+            if (!id) {
               alert('Fill in the fields');
               return;
             }
             const allProduct = await apiRequest('GET');
             const found = allProduct.some(p => p.id === id);
-              if(!id){
+              if(!found){
                 alert('There is no product with this ID.');
               }
             await apiRequest('DELETE', `/${id}`)
           }
+           form.reset();
   }

@@ -221,6 +221,11 @@ header .nav-menu li:hover {
   background-color: #fff;
 }
 
+input:disabled {
+  background-color: #c2bcbc;     
+    
+}
+
 .submit {
   background-color: #84a98c;
   color: white;

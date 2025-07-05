@@ -1,87 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Styles and fonts -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
-    <title>Document</title>
+  <title>Document</title>
 </head>
 <body>
-   <header>
-  <div class="logo">
-    <i class="fas fa-store"></i>
-    <h1>My Clothing Shop</h1>
-  </div>
-  <nav class="nav-menu">
-    <ul>
-      <li>Home</li>
-      <li>Products</li>
-      <li>Warranty</li>
-      <li>Stores</li>
-    </ul>
-  </nav>
-</header>
 
-
-    <section>
-        <div id="productos-container"> 
-        <!--Aquí rederizademos los productos-->
+  <!-- Header with logo and navigation -->
+    <header>
+        <div class="logo">
+            <i class="fas fa-store"></i>
+            <h1>My Clothing Shop</h1>
         </div>
+        <nav class="nav-menu">
+        <ul>
+            <li>Home</li>
+            <li>Products</li>
+            <li>Warranty</li>
+            <li>Stores</li>
+        </ul>
+        </nav>
+    </header>
+
+  <!-- Section to render product cards -->
+    <section>
+        <div id="productos-container"></div>
+
+        <!-- Product template to clone dynamically -->
         <template id="template-producto">
             <div class="card" id="cardDiv">
-                <div class="card-img"> <i class="fas fa-shopping-cart"></i></div>
+                <div class="card-img">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
                 <div class="card-info">
-                    <p class="text-name">CAMISA </p>
-                    <p class="text-id">ID: 1</p>
-                    <p class="text-feature">sadjadjk</p>
+                    <p class="text-name"></p>
+                    <p class="text-id"></p>
+                    <p class="text-feature"></p>
                 </div>
                 <div class="card-footer">
-                    <span class="price">$499.49</span>
-                    
+                    <span class="price"></span>
                 </div>
             </div>
         </template>
     </section>
 
-    <section class="section-button">
-        <div class="button-container">
-            <button class="button"id="btn-create" >CREAR</button>
-            <button class="button" id="btn-update" >ACTUALIZAR</button>
-            <button class="button" id="btn-delete" >ELIMINAR</button>
-        </div>
+  <!-- Section for CRUD buttons and form -->
+  <section class="section-button">
+    <div class="button-container">
+      <button class="button" id="btn-create">CREATE</button>
+      <button class="button" id="btn-update">UPDATE</button>
+      <button class="button" id="btn-delete">DELETE</button>
+    </div>
 
-        <div class="hidden" id="containerForm">
-            <div class="form-wrapper">
-                <form class="form" id="form">
-                    <p class="title" id="title-form">Register</p>
-                    <p class="message" id="message">Signup now and get full access to our app.</p>
+    <!-- Form that appears after clicking any CRUD button -->
+    <div class="hidden" id="containerForm">
+      <div class="form-wrapper">
+        <form class="form" id="form">
+          <p class="title" id="title-form">Register</p>
+          <p class="message" id="message">Signup now and get full access to our app.</p>
 
-                    <label for="input-id">ID</label>
-                    <input class="input" type="text" name="id" id="input-id" />
+          <label for="input-id">ID</label>
+          <input class="input" type="text" name="id" id="input-id" />
 
-                    <label for="input-name">Product name</label>
-                    <input class="input" type="text" name="name" id="input-name" />
+          <label for="input-name">Product name</label>
+          <input class="input" type="text" name="name" id="input-name" />
 
-                    <label for="input-price">Price</label>
-                    <input class="input" type="number" name="price" id="input-price" />
+          <label for="input-price">Price</label>
+          <input class="input" type="number" name="price" id="input-price" />
 
-                    <label for="input-feature">Feature</label>
-                    <input class="input" type="text" name="feature" id="input-feature" />
+          <label for="input-feature">Feature</label>
+          <input class="input" type="text" name="feature" id="input-feature" />
 
-                    <input class="submit" type="submit" value="Enviar" />
-                    </form>
+          <input class="submit" type="submit" value="Submit" />
+        </form>
+      </div>
+    </div>
+  </section>
 
-            </div>
-        </div>
-    </section>
-
-
-    
-   <script type="module" src="./JS/main.js"></script>
+  <!-- Main JavaScript module -->
+  <script type="module" src="./JS/main.js"></script>
 </body>
 </html>
-
