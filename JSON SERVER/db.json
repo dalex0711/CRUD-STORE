@@ -19,16 +19,34 @@
       "price": 24.99
     },
     {
-      "id": "4",
-      "name": "Leather Jacket",
-      "feature": "Genuine leather, zip closure",
-      "price": 149.99
-    },
-    {
       "id": "5",
       "name": "Canvas Backpack",
       "feature": "Durable material, multiple pockets",
-      "price": 44.50
+      "price": 44.5
+    },
+    {
+      "id": "2111",
+      "name": "pantalon",
+      "price": 1221,
+      "feature": "asd"
+    },
+    {
+      "id": "a73e",
+      "name": "pantalon",
+      "price": 1,
+      "feature": "asd"
+    },
+    {
+      "id": "d2cf",
+      "name": "pantalon",
+      "price": 1,
+      "feature": "asd"
+    },
+    {
+      "id": "d58e",
+      "name": "qwe",
+      "price": 2,
+      "feature": "123"
     }
   ]
 }

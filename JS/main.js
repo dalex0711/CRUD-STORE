@@ -50,7 +50,7 @@ let containerForm = document.querySelector('#containerForm'),
 createBtn.addEventListener('click', () => {
   pressedButton = 'create';
   titleForm.innerHTML = "Create";
-  messageForm.innerHTML = "You just need to enter the [name, price, and features]. The ID is automatic.";
+  messageForm.innerHTML = "You just need to enter the NAME, PRICE, and FEATURES]. The ID is automatic.";
   containerForm.style.display = "flex";
 
   productID.disabled = true;
@@ -63,7 +63,7 @@ createBtn.addEventListener('click', () => {
 updateBtn.addEventListener('click', () => {
   pressedButton = 'update';
   titleForm.innerHTML = "Update";
-  messageForm.innerHTML = "You must enter all fields";
+  messageForm.innerHTML = "You must enter ALL fields";
   containerForm.style.display = "flex";
 
   productID.disabled = false;
@@ -76,7 +76,7 @@ updateBtn.addEventListener('click', () => {
 deleteBtn.addEventListener('click', () => {
   pressedButton = 'delete';
   titleForm.innerHTML = "Delete";
-  messageForm.innerHTML = "Enter the id to delete";
+  messageForm.innerHTML = "Enter the (ID) to delete";
   containerForm.style.display = "flex";
 
   productID.disabled = false;
@@ -86,3 +86,75 @@ deleteBtn.addEventListener('click', () => {
 });
 
 
+
+form.addEventListener("submit", onFormSubmit);
+
+
+  async function onFormSubmit(e) {
+      
+    e.preventDefault();
+
+      const data = new FormData(e.target);
+      const name = data.get("name");
+      const feature = data.get("feature");
+      const id = data.get("id");
+      const price = Number(data.get("price")); 
+
+      if (isNaN(price)) {
+        alert("The price must be a valid number.");
+        return;
+      }
+
+      /**
+       * VALIDATIONS TO CREATE A PRODUCT: THAT IT IS NOT EMPTY, THAT THE PRICE IS AN APPROPRIATE VALUE
+       */
+
+        if (pressedButton === 'create') {
+          if (!name || !price || !feature) {
+            alert('Fill in the fields');
+            return;
+          } else if (price < 0) {
+            alert('You must enter a valid price.');
+            return;
+          } else {
+            await apiRequest('POST', '', { name, price, feature }); 
+          } 
+      /*
+       * VALIDATIONS TO UPDATE A PRODUCT: THAT IT IS NOT EMPTY, THAT THE PRICE IS AN APPROPRIATE VALUE,
+       * THAT THE ID EXISTS: WE DID A GET, AS THERE ARE FEW PRODUCTS, THERE IS NO PROBLEM.
+       */
+
+        }else if(pressedButton === 'update'){
+
+          if (!name || !price || !feature) {
+            alert('Fill in the fields');
+            return;
+          } else if (price < 0) {
+            alert('You must enter a valid price.');
+            return;
+          }
+          const allProduct = await apiRequest('GET');
+          const found = allProduct.some(p => p.id == id)
+          if(!found){
+            alert('There is no product with this ID.');
+          }
+          await apiRequest('PUT', `/${id}`, { name, price, feature });
+
+           /*
+            * VALIDATIONS FOR DELETE A PRODUCT: THAT IT IS NOT EMPTY.
+            * THAT THE ID EXISTS: WE DID A GET. AS THERE ARE FEW PRODUCTS, THERE IS NO PROBLEM
+          */
+         
+          } else {
+            if (!name || !price || !feature) {
+              alert('Fill in the fields');
+              return;
+            }
+            const allProduct = await apiRequest('GET');
+            const found = allProduct.some(p => p.id === id);
+              if(!id){
+                alert('There is no product with this ID.');
+              }
+            await apiRequest('DELETE', `/${id}`)
+          }
+  }
